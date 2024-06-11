@@ -1,0 +1,16 @@
+services:
+  go-server:
+    image: "localhost:5123/go-server:latest"
+    pull_policy: always
+    ports:
+      - "8088:8001"
+  registry:
+    image: registry:2
+    ports:
+      - "5123:5000"
+    volumes:
+      - registry-data:/data
+
+volumes:
+  registry-data: {}
+
