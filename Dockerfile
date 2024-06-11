@@ -4,12 +4,14 @@ WORKDIR /app
 
 COPY go.mod go.sum ./
 
-RUN go mod download
+ENV GOMODCACHE=/root/.go-mod-cache
+RUN --mount=type=cache,id=gomodcache,target=$GOMODCACHE go mod download
 
 COPY . .
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /go-server
+ENV GOCACHE=/root/.go-build-cache
+RUN --mount=type=cache,id=gobuildcache,target=$GOCACHE CGO_ENABLED=0 GOOS=linux go build -o /go-server
 
 EXPOSE 8001
 
