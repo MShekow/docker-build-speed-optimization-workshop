@@ -1,0 +1,7 @@
+.*
+buildkit.toml
+Dockerfile
+compose.yml
+LICENSE
+*.md
+*_test.go
