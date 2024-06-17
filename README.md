@@ -17,16 +17,6 @@ A small workshop that applies various optimization techniques to an example HTTP
 
 ## Building and testing the image
 
-- Set the environment variable `BUILDKIT_PROGRESS` to `plain` to see a more detailed build output:
-  - Windows:
-    ```shell
-    $env:BUILDKIT_PROGRESS = "plain"
-    ```
-  - Linux / UNIX:
-    ```shell
-    export BUILDKIT_PROGRESS=plain
-    ```
-    
 - ```shell
   docker buildx build --platform linux/amd64,linux/arm64 -t registry:5000/go-server:latest --push .
   ```
