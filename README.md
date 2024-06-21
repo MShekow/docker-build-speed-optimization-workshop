@@ -9,7 +9,7 @@ A small workshop that applies various optimization techniques to an example HTTP
   ```
   - This creates the Docker network `docker-build-speed-optimization-workshop_default` and starts a local image registry server
 - ```shell
-  docker buildx create --driver docker-container --name mybuilder --use --bootstrap --config buildkit.toml --driver-opt "network=docker-build-speed-optimization-workshop_default"
+  docker buildx create --driver docker-container --name mybuilder --use --bootstrap --config buildkit.toml --driver-opt "network=docker-build-speed-optimization-workshop_default,image=docker.cloudland.org/moby/buildkit:buildx-stable-1"
   ```
   - This creates your personal, container-based builder that can push to the local registry
 
