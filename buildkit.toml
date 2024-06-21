@@ -1,2 +1,5 @@
 [registry."registry:5000"]
   http = true
+
+[registry."docker.io"]
+  mirrors = ["docker.cloudland.org"]
