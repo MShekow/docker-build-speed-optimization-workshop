@@ -27,3 +27,11 @@ A small workshop that applies various optimization techniques to an example HTTP
   - This starts the go-server in the container
   - Open http://localhost:8088 in the browser and verify that the server is running
   - `CTRL+C` to stop the go-server again
+
+## Tutorial
+
+Apply the following steps to improve the build speed (**note**: the solution can be found in the `tutorial` branch):
+- Use a smart `RUN` statement order to speed up installing the Go modules
+- Add a `.dockerignore` file to exclude unnecessary files from the build context
+- Add BuildKit cache mounts to speed up the downloading of dependencies ([module cache](https://go.dev/ref/mod#module-cache)) and building the binary ([build cache](https://pkg.go.dev/cmd/go#hdr-Build_and_test_caching))
+- Make use of a multi-stage build and use _cross-compilation_ to speed up building the binary for multiple platforms
